@@ -11,7 +11,7 @@ public:
 	Pixel(Layer* layer);
 	void Flap();
 	void Update();
-	void fall();
+	void Fall();
 	bool isDead;
 private:
 	Sprite* pixelTexture;

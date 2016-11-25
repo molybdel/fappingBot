@@ -44,7 +44,7 @@ bool AppDelegate::applicationDidFinishLaunching() {
 #else
         glview = GLViewImpl::create("fapPixel");
 #endif
-		glview->setFrameSize(360, 600);
+		glview->setFrameSize(480, 800);
         director->setOpenGLView(glview);
     }
 	glview->setDesignResolutionSize(480, 800, ResolutionPolicy::NO_BORDER);

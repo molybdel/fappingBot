@@ -37,7 +37,7 @@ bool IntroScene::init()
 	introBackground->setPosition(Point(origin.x + visibleSize.width / 2, origin.y + visibleSize.height / 2));
 	this->addChild(introBackground);
 
-	this->scheduleOnce(schedule_selector(IntroScene::gotoMenuScene), 5.0f);
+	this->scheduleOnce(schedule_selector(IntroScene::gotoMenuScene), 3.0f);
 	return true;
 }
 

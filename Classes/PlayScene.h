@@ -13,6 +13,7 @@ public:
 	void update(float dt);
 	void onExit();
 	bool onContactBegin(PhysicsContact & contact);
+	CREATE_FUNC(PlayScene);
 private:
 	Size visibleSize;
 	Vec2 origin;

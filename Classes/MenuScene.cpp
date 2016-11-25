@@ -1,5 +1,7 @@
 #include "MenuScene.h"
 #include "PlayScene.h"
+#include "OverLayer.h"
+
 USING_NS_CC;
 
 Scene * MenuScene::createScene()
@@ -27,8 +29,8 @@ bool MenuScene::init()
 	{
 		return false;
 	}
-	Size visibleSize = Director::getInstance()->getVisibleSize();
-	Vec2 origin = Director::getInstance()->getVisibleOrigin();
+	visibleSize = Director::getInstance()->getVisibleSize();
+	origin = Director::getInstance()->getVisibleOrigin();
 
 	auto menuBackground = Sprite::create("MenuBackground.png");
 	menuBackground->setPosition(origin.x + visibleSize.width / 2, origin.y + visibleSize.height / 2);
@@ -39,7 +41,7 @@ bool MenuScene::init()
 	this->addChild(titleGame);
 
 	//Button
-	auto playBtn = MenuItemImage::create("PlayBtn.png", "playBtn.png", CC_CALLBACK_0(MenuScene::gotoPlayScene, this));
+	auto playBtn = MenuItemImage::create("PlayBtn.png", "playBtn.png", CC_CALLBACK_0(MenuScene::openOverLayer, this));
 	auto menu = Menu::create(playBtn, nullptr);
 	menu->setPosition(origin.x + visibleSize.width / 2, origin.y + visibleSize.height / 2);
 	this->addChild(menu);
@@ -50,4 +52,12 @@ void MenuScene::gotoPlayScene()
 {
 	auto playscene = PlayScene::createScene();
 	Director::getInstance()->replaceScene(playscene);
+}
+
+void MenuScene::openOverLayer()
+{
+	auto overlayer = OverLayer::create();
+	overlayer->setScore(0);
+	//overlayer->setPosition(origin.x, origin.y);
+	this->addChild(overlayer);
 }

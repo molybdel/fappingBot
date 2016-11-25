@@ -1,5 +1,6 @@
 #ifndef MENU_SCENE_H
 #define MENU_SCENE_H
+
 #include "cocos2d.h"
 
 class MenuScene : public cocos2d::Layer
@@ -12,7 +13,10 @@ public:
 	// implement the "static create()" method manually
 	CREATE_FUNC(MenuScene);
 private:
+	Size visibleSize;
+	Vec2 origin;
 	void gotoPlayScene();
+	void openOverLayer();
 };
 
 #endif // !MENU_SCENE_H

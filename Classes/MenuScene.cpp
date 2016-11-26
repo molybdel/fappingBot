@@ -1,7 +1,7 @@
 #include "MenuScene.h"
 #include "PlayScene.h"
 #include "OverLayer.h"
-
+#include "cocos2d.h"
 USING_NS_CC;
 
 Scene * MenuScene::createScene()
@@ -29,6 +29,8 @@ bool MenuScene::init()
 	{
 		return false;
 	}
+	Size visibleSize;
+	Vec2 origin;
 	visibleSize = Director::getInstance()->getVisibleSize();
 	origin = Director::getInstance()->getVisibleOrigin();
 

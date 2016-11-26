@@ -13,8 +13,6 @@ public:
 	// implement the "static create()" method manually
 	CREATE_FUNC(MenuScene);
 private:
-	Size visibleSize;
-	Vec2 origin;
 	void gotoPlayScene();
 	void openOverLayer();
 };
